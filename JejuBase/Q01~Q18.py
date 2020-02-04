@@ -82,9 +82,21 @@ user_input = input()
 print(user_input[::-1])
 
 '''
-
+'''
 # Q18 과목 평균
 user_input = input()
 l = user_input.split(' ')
 print(l)
+changel = []
+
+for i in l:
+    changel.append(int(i))
+
+print(sum(changel)//3)
+
+
+l = ['20']
+x = int(l[0])
+print(x)
+'''
 

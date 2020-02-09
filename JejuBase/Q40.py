@@ -4,6 +4,7 @@ limit = int(input()) # 무게제한
 n = int(input()) #몇명이 탑승
 
 for i in range(1, n+1):
+    print(i)
     weight = int(input())
     if total <= limit:
         total += weight

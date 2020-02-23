@@ -1,4 +1,3 @@
-x = []
-x.append(["시작기둥", "목표기둥"])
+x = [True] * 2
 
 print(x)

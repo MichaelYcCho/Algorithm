@@ -25,7 +25,7 @@ s = 0
 for i in range(사각형 - 탐색가능지역 + 1):
     for j in range(탐색가능지역):
         print(i, 탐색가능지역+i )
-        print(j, 탐색가능지역+j)
+        print(j, 탐색가능지역+j) 
         print('================')
         if np.sum(지뢰밭[i:탐색가능지역+i, j:탐색가능지역+j]) > s:
             s = np.sum(지뢰밭[i:탐색가능지역+i, j:탐색가능지역+j])

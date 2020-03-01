@@ -55,6 +55,7 @@ for i in range(len(l)):
 print(l)
 
 
+
 print(l[0:5])
 print(l[5:10])
 print(l[10:15])

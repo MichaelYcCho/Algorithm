@@ -1,7 +1,6 @@
-count = 5
+#InputArr.sort(key=lambda x: (x[1], x[0]))
 
+x = [[2, 3], [1, 2]]
+b = sorted(x, key=lambda x: x[1])
 
-for i in range(count):
-    print(f'i는 {i}')
-    i += i
-    print(i)
+print(b)

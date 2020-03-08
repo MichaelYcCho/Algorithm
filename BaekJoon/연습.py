@@ -1,6 +1,4 @@
-#InputArr.sort(key=lambda x: (x[1], x[0]))
+n, k = list(map(int, input().split()))
+a = list(map(int, input().split()))
 
-x = [[2, 3], [1, 2]]
-b = sorted(x, key=lambda x: x[1])
-
-print(b)
+print(a)

@@ -12,8 +12,10 @@ def sol():
         for j in range(i+1):
             print(f'j는 {val[j]}')
             answer += val[j]
+            print(answer)
     
     return answer
 
 
 print(sol())
+

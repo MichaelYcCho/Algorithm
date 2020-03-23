@@ -1,3 +1,18 @@
+
+a = 1000 - int(input())
+b = [500, 100, 50, 10, 5, 1]
+count = 0
+for i in b:
+    count += a // i
+    print(f'count {count}')
+    a %= i
+    print(f'a = {a}')
+print(count)
+
+
+
+
+'''
 n = input().split()
 print(n[0])
 
@@ -7,7 +22,7 @@ stk.append(1)
 stk.append(2)
 stk.pop(-1)
 print(stk)
-
+'''
 
 
 '''

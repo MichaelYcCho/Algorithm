@@ -3,6 +3,7 @@ a = 1000 - int(input())
 b = [500, 100, 50, 10, 5, 1]
 count = 0
 for i in b:
+    print(f"i : {i}")
     count += a // i
     print(f'count {count}')
     a %= i

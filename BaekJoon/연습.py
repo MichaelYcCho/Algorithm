@@ -1,7 +1,14 @@
-n = 3
-a = [False,False] + [True]*(n-1)
+a = "123"
+b = "12345"
 
-print(a)
+#print(bool(a in b))
+
+
+a = "가나다"
+b = "가나다라"
+
+print(bool(a in b))
+
 '''
 Q6588
 n = int(input())

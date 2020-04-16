@@ -1,21 +1,8 @@
-import collections
 
-def solution(clothes):
-    answer = 1
-    kind = []
-    
-    for a, b in clothes:
-        kind.append(b)
-        
-    kind = collections.Counter(kind)
-    
-    for i in kind.values():
-    	answer *= (i + 1)
-    
-    return answer - 1
+def sol(list1, word):
+    print(list1, word)
 
 
-clothes = [["yellow_hat", "headgear"], ["blue_sunglasses", "eyewear"], ["green_turban", "headgear"]]
 
 
-print(solution(clothes))
+print(sol(list1 = [1, 2, 3], word="ss, 22, dd, 33, 44" ))

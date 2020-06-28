@@ -19,7 +19,7 @@ for idx, x in enumerate(k):
 
     elif tmp == min:
         if x > score:
-            score = studentNo = idx + 1
+            studentNo = idx + 1
 
 
 print(score, studentNo)

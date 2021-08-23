@@ -2,18 +2,19 @@ import sys
 
 n, k = map(int, input().split())
 a = list(map(int, input().split()))
-sum_list = []
+sum_result = set()
 
 for i in range(n):
     for j in range(i+1, n):
         for m in range(j+1, n):
             result = a[i] + a[j] + a[m]
-            sum_list.append(result)
+            sum_result.add(result)
 
 #reverse를 통해 내림차순으로 정렬
-sum_list.sort(reverse=True)
+sum_result = list(sum_result)
+sum_result.sort(reverse=True)
 #print(sum_list)
-print(sum_list[k-1])
+print(sum_result[k-1])
 
 
 '''

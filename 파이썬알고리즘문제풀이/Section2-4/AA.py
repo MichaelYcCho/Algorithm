@@ -1,7 +1,36 @@
 import sys
 
-sys.stdin = open("input.txt", "r")
+#sys.stdin = open("input.txt", "r")
 
+n = int(input())
+student_score = list(map(int, input().split()))
+
+avarage = round(sum(student_score) / n)
+
+
+min_gap = 1000
+min_idx = 1000
+score = 0
+
+for idx, x in enumerate(student_score):
+    abs_num = abs(avarage - x)
+
+    if abs_num < min_gap:
+        min_gap = abs_num
+        score = x
+        min_idx = idx
+
+    elif min_gap == abs_num:
+        if x > score:
+            score = x
+            min_idx = idx
+
+print(avarage, min_idx+1)
+
+
+
+
+'''
 n = int(input())
 
 k = list(map(int, input().split()))
@@ -23,4 +52,4 @@ for idx, x in enumerate(k):
 
 
 print(score, studentNo)
-   
+'''

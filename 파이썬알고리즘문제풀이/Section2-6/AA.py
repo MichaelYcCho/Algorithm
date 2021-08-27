@@ -1,7 +1,27 @@
 import sys
-sys.stdin = open('input.txt', 'r')
+#sys.stdin = open('input.txt', 'r')
+
+def each_sum_num(x):
+    each_num = str(x)
+    sum_num = 0
+    for i in each_num:
+        sum_num += int(i)
+    return sum_num
 
 
+n = int(input())
+num_list = list(map(int, input().split()))
+
+max_num = 0
+result = 0
+for x in num_list:
+    if each_sum_num(x) > max_num:
+        max_num = each_sum_num(x)
+        result = x
+
+print(x)
+
+'''
 def digit_sum(x):
     sum = 0
     #str_n = list(str(x))
@@ -12,7 +32,6 @@ def digit_sum(x):
     return sum 
 
 
-    '''
     또는
 
     sum = 0
@@ -20,7 +39,6 @@ def digit_sum(x):
         sum +=x%10
         x=x//10
 
-    '''
 
 
 
@@ -37,3 +55,4 @@ for x in a:
         res = x
 
 print(x)
+'''

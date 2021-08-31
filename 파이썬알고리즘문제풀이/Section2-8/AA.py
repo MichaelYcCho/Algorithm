@@ -1,4 +1,30 @@
 import sys
+
+
+x = int(input())
+num_list = list(map(int, input().split()))
+result = []
+
+
+def reverse_num(number):
+    return int(str(number)[::-1])
+
+def is_prime(number):
+    for i in range(2, number):
+        if number == 1:
+            return False
+        if number % i == 0:
+            return False
+    return True
+
+for i in num_list:
+    if is_prime(reverse_num(i)):
+        result.append(reverse_num(i))
+
+print(*result, sep=', ')
+
+
+'''
 sys.stdin = open("input.txt", "r")
 
 n = int(input())
@@ -27,3 +53,4 @@ for i in a:
     reverse_num = reverse(i)
     if isPrime(reverse_num):
         print(reverse_num, end=" ")
+'''

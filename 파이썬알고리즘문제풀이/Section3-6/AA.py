@@ -25,9 +25,9 @@ for i in range(n):
         largest = column_sum
 
 sum1 = sum2 = 0
-for i in range(n):
+for i in range(n): # n이 5일때
     sum1 += a[i][i] # (0, 0), (1, 1), (2, 2) ... 의 합
-    sum2 += a[i][n-i-1] # (4, 0), (3, 1), (2, 2) ... 의 합
+    sum2 += a[i][n-i-1] # (0, 4), (1, 3), (2, 2) ... 의 합
     
 if sum1 > largest:
     largest = sum1

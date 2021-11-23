@@ -1,3 +1,72 @@
+# 3-6 격자판 최대합
+
+import sys
+
+sys.stdin = open('input.txt', 'r')
+n = int(input())
+
+
+a = [list(map(int, input().split())) for _ in range(n)]
+
+
+answer = 0
+
+
+for i in range(n):
+    row_sum = column_sum = 0
+    for j in range(n):
+        row_sum += a[i][j]
+        column_sum += a[j][i]
+        
+        if row_sum > answer:
+            answer = row_sum
+        
+        if column_sum > answer:
+            answer = column_sum
+            
+
+sum1 = sum2 = 0
+
+for i in range(n):
+    sum1 += a[i][i]
+    sum2 += a[i][n-i-1]
+    
+    if sum1 > answer:
+        answer = sum1
+
+    if sum2 > answer:
+        answer = sum2
+
+
+print(answer)
+        
+      
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''
+
 import sys
 
 sys.stdin = open('input.txt', 'r')
@@ -35,3 +104,4 @@ if sum2 > largest:
     largest = sum2
 
 print(largest)
+'''

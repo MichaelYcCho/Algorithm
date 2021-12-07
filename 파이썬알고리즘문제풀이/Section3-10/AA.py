@@ -14,7 +14,7 @@ def check(a):
             return False
     
     # 대각선 계산을 위한 그룹 탐색
-    # i ~ j는 9개의 그룹을 보겠다는 의미
+    # i ~ j는 9개의 그룹(3 * 3 전체에대해서)을 보겠다는 의미
     for i in range(3):
         for j in range(3): 
             ch3 = [0] * 10

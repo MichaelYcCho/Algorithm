@@ -9,7 +9,7 @@ def show_list(dlist):
         cur=cur.next
     print()
 
-def main():
+if __name__ == "__main__":
     dlist=DoubleLinkedList()
     print('*'*100)
     print('데이터 삽입 -add_first')

@@ -30,8 +30,7 @@ class CQueue:
         self.container[self.rear] = data # 해당 rear에 데이터 삽입
         self.rear = self.__step_forward(self.rear) # 마지막으로 삽입한 데이터의 다음을 가리킨다. 
 
-
-
+    # Enqueue는 해당 인덱스에 data를 넣는 역할, dequeue는 rear를 이동해서 인덱스를 재배치해주는 역할 (직접적으로 여기서 값을 지우진않는다.)
     def dequeue(self):
         if self.is_empty():
             raise Exception("Queue is empty")

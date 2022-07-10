@@ -19,6 +19,7 @@ class Graph:
         return False
     
     def add_vertex(self):
+        """ 추가된 정점의 정점 인덱스를 반환"""
         for i in range(len(self.vtx_arr)):
             # 중간에 상제된 정점이 있으면 이를 재사용
             # vtx_arr == False 은 삭제된 정점

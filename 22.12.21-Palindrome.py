@@ -17,7 +17,7 @@ def isPalindrome(s: str) -> bool:
             strs.append(char.lower())
 
     while len(strs) > 1:
-        if strs.pop(0) != strs.pop():
+        if strs.pop(0) != strs.pop(): # List의 Pop(0) 는 O(n)
             return False
     
     return True
@@ -32,7 +32,7 @@ print(answer2)
 
 
 """
-DeQue를 활용
+DeQue를 활용 (O(n))
 앞, 뒤 양쪽 방향에서 엘리먼트(element)를 추가하거나 제거할 수 있다.
 데크는 양 끝 엘리먼트의 append와 pop이 훨씬 빠르다.
 컨테이너(container)의 양끝 엘리먼트(element)에 접근하여 삽입 또는 제거를 할 경우, 일반적인 리스트(list)가 이러한 연산에 O(n)이 소요되는 데 반해, 
@@ -51,7 +51,7 @@ def isPalindrome2(s: str) -> bool:
             strs.append(char.lower())
 
     while len(strs) > 1:
-        if strs.popleft() != strs.pop():
+        if strs.popleft() != strs.pop(): # poplift = O(1)
             return False
 
     return True

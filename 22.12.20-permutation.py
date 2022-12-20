@@ -3,23 +3,16 @@
 
 
 def permutation(arr, start):
-    print("날 호출했어요!")
-    print("start: ", start)
-    print("len(arr) - 1: ", len(arr) - 1)
 
     if len(arr) - 1 == start:
-        print(arr)
         return
 
     for idx in range(start, len(arr)):
-        print("start: ", start, "idx: ", idx, "len(arr)", len(arr))
-        print("arr[start]: ", arr[start], "arr[idx]: ", arr[idx])
+
         arr[start], arr[idx] = arr[idx], arr[start]
-        print()
+
         permutation(arr, start + 1)
-        arr[start], arr[idx] = arr[idx], arr[start]
-        print()
-    
+        arr[start], arr[idx] = arr[idx], arr[start] # 재배치 첫번째 사이클 기준 2, 2 이므로 첫번째 숫자를 2로 바꾸고 idx 1시작
 
 if __name__ == "__main__":
     arr = [1, 2, 3]

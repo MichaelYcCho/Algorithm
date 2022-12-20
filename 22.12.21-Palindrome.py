@@ -6,7 +6,8 @@ STR1 = "A man, a plan, a canal: Panama"
 STR2 = "race a car"
 
 """
-List를 활용한 방법 빅오는 O(n^2)
+List를 활용한 방법 빅오는 O(n^2) 
+304 밀리초
 """
 
 def isPalindrome(s: str) -> bool:
@@ -33,12 +34,14 @@ print(answer2)
 
 """
 DeQue를 활용 (O(n))
+64 밀리초
 앞, 뒤 양쪽 방향에서 엘리먼트(element)를 추가하거나 제거할 수 있다.
 데크는 양 끝 엘리먼트의 append와 pop이 훨씬 빠르다.
 컨테이너(container)의 양끝 엘리먼트(element)에 접근하여 삽입 또는 제거를 할 경우, 일반적인 리스트(list)가 이러한 연산에 O(n)이 소요되는 데 반해, 
 데크(deque)는 O(1)로 접근 가능하다.
 """
 from collections import deque
+import re
 from typing import Deque
 
 
@@ -56,8 +59,22 @@ def isPalindrome2(s: str) -> bool:
 
     return True
 
-
+print()
 print(isPalindrome2(STR1))
 print(isPalindrome2(STR2))
 
     
+"""
+술라이싱 사용
+36밀리초
+"""
+
+def isPalindrome3(s: str) -> bool:
+    s = s.lower()
+
+    s = re.sub('[^a-z0-9]', "", s)
+    return s == s[::-1]
+
+print()
+print(isPalindrome3(STR1))
+print(isPalindrome3(STR2))

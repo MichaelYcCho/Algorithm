@@ -73,7 +73,7 @@ def isPalindrome3(s: str) -> bool:
     s = s.lower()
 
     s = re.sub('[^a-z0-9]', "", s)
-    return s == s[::-1]
+    return s == s[::-1] # 역순부터 조회
 
 print()
 print(isPalindrome3(STR1))

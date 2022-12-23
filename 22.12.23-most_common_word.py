@@ -12,7 +12,7 @@ def most_common_word(paragraph: str, banned: list[str]) -> str:
     # 먼저 중복된 데이터가 저장된 배열을 인자로 넘기면 각 원소가 몇 번씩 나오는지가 키은트가 많은 순으로 출력해준다
     # cf) 문자열만 넘기면 넘긴 문자순으로 카운트 하여 출력한다.
     counts = collections.Counter(words)
-    print(counts.most_common(1)[0][0])
+    print(counts.most_common(1)[0][0]) # most_common(1)은 가장 많이 나온 원소 1개를 출력한다. [('ball', 2)] 에서 [0][0]은 ball을 출력한다.
     
 
 most_common_word(paragraph, banned)

@@ -24,3 +24,25 @@ def group_anagrams(word_list: List[str]) :
         anagrams[''.join(sorted(word))].append(word)
 
     return list(anagrams.values())
+
+
+
+def group_anagrams2(word_list: List[str]) :
+    """
+    그룹 1을 풀어서? 쓰면 아래와 같다
+    """
+
+    new_dict = {}
+
+    for word in word_list:
+        sorted_word = ''.join(sorted(word))
+        if sorted_word in new_dict:
+            new_dict[sorted_word].append(word)
+        else:
+            new_dict[sorted_word] = [word]
+
+    return list(new_dict.values())
+
+
+print(group_anagrams(word_list))
+print(group_anagrams2(word_list))

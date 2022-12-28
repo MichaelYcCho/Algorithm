@@ -39,8 +39,24 @@ class Solution:
         return answer
 
 
-
-
+    def longest_palindrome3(self, s: str) -> str:
+        
+        answer = ""
+        n = len(s)
+        for i in range(n):
+            left, right = i, i
+            while left >= 0 and right < n and s[left] == s[right]:
+                if right - left + 1 > len(answer):
+                    answer = s[left: right+1]
+                left -= 1
+                right += 1
+            
+            left, right = i, i+1
+            while left >= 0 and right < n and s[left] == s[right]:
+                if right - left + 1 > len(answer):
+                    answer = s[left: right+1] # 새로운 answer가 기존의 answer보다 크면 answer에 저장
+        
+        return answer
 
 
 

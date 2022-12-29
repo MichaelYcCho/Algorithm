@@ -11,7 +11,7 @@ Output:
 def group_anagrams(word_list: List[str]) :
     """
     defaultdict는 dict의 서브클래스로,
-    defaultdict()으 ㅣ인자로 주어진 객체를 기본값으로 가지는 딕셔너리값의 초기값으로 지정할 수 있다. 
+    defaultdict()의 인자로 주어진 객체를 기본값으로 가지는 딕셔너리값의 초기값으로 지정할 수 있다. 
     숫자, 리스트, set등으로 초기화 가능하다 
     
     """

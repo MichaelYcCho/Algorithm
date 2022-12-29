@@ -58,10 +58,32 @@ class Solution:
         
         return answer
 
+    
+    def longest_palindrome4(self, s: str) -> str:
+
+        # # 홀수 글자, 짝수 글자를 모두 고려해야함
+        def expand(left: int, right: int) -> str:
+            while left >= 0 and right < len(s) and s[left] == s[right]:
+                left -= 1
+                right += 1
+            return s[left+1: right]
+
+        if len(s) < 2 or s == s[::-1]:
+            return s
+
+        result = ''
+        # 슬라이딩 윈도우 우측으로 이동
+        for i in range(len(s)-1):
+            # max 함수를 이용하여 가장 긴 팰린드롬을 result에 저장 (max에 들어온 인자들 중 가장 큰 값을 반환)
+            result = max(result, expand(i, i+1), expand(i, i+2), key=len)
+
+        return result
+
 
 
 
 STRING = "babad"
 solution = Solution()
 #print(solution.longest_palindrome1(STRING))  # bab
-print(solution.longest_palindrome2(STRING))  # aba
+#print(solution.longest_palindrome2(STRING))  # aba
+print(solution.longest_palindrome4(STRING))  # bab

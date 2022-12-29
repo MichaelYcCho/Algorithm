@@ -61,7 +61,7 @@ class Solution:
     
     def longest_palindrome4(self, s: str) -> str:
 
-        # # 홀수 글자, 짝수 글자를 모두 고려해야함
+        # 홀수 글자, 짝수 글자를 모두 고려해야함
         def expand(left: int, right: int) -> str:
             while left >= 0 and right < len(s) and s[left] == s[right]:
                 left -= 1

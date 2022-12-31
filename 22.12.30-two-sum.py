@@ -32,17 +32,21 @@ class Solution:
         hash_map = {}
         # 키와 값을 바꿔서 딕셔너리로 저장
         for num, value in enumerate(nums): 
-            hash_map[value] = num
+            hash_map[value] = num # {11: 0, 2: 1, 15: 2, 7: 3}
+
         
         # 타겟에서 첫번째 수를 뺀 결과를 키로 조회
-        for num, value in enumerate(nums):
-            if (target - value) in hash_map and num != hash_map[target - value]:
-                return [num, hash_map[target - value]]
+        for key, value in enumerate(nums):
+            least_num = target - value
+            # least_num의 key값은 hash_map 에 포함되어야하며, 
+            # 해당 key는 중복사용을 막기위해 현재 key와 같지 않은지 확인해야 한다. 
+            if least_num in hash_map and key != hash_map[least_num]:
+                return [key, hash_map[least_num]]
 
 
 
   
 solution=Solution()
-answer = solution.twoSum3([11,2,15,7], 9)
+answer = solution.twoSum3([11, 2, 15, 7], 9)
 #output -> [1, 3]
 print(answer)

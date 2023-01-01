@@ -43,10 +43,17 @@ class Solution:
             if least_num in hash_map and key != hash_map[least_num]:
                 return [key, hash_map[least_num]]
 
+    def twoSum4(self, nums: List[int], target: int) -> List[int]:
+        hash_map = {}
+        # twoSum3에서 2번 사용한 for문을 1번으로 줄여보자
+        for index, value in enumerate(nums):
+            if target - value in hash_map:
+                return [hash_map[target - value], index]
+            hash_map[value] = index
 
 
   
 solution=Solution()
-answer = solution.twoSum3([11, 2, 15, 7], 9)
+answer = solution.twoSum4([11, 2, 15, 7], 9)
 #output -> [1, 3]
 print(answer)

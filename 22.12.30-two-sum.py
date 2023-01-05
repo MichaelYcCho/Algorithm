@@ -51,6 +51,23 @@ class Solution:
                 return [hash_map[target - value], index]
             hash_map[value] = index
 
+    
+    def twoSum5(self, nums: List[int], target: int) -> List[int]:
+        # 2포인트터를 활용해서 풀어보자 정렬에 n log n, 탐색에 n 이므로 O은 가장 긴 값인 n log n 이다
+
+        nums.sort()
+        l, r = 0, len(nums) - 1  # 각각 시작할 인덱스 설정(인덱스이므로 전체 길이에서 -1)
+        while l < r:
+            if nums[l] + nums[r] > target: # 합이 타겟보다 크면 오른쪽 포인터를 왼쪽으로(정렬상태이므로 최댓값을 낮춰본다)
+                r -= 1
+            elif nums[l] + nums[r] < target: # 합이 타겟보다 작으면 왼쪽 포인터를 오른쪽으로(정렬상태이므로 최솟값을 높여본다)
+                l += 1
+
+            if nums[l] + nums[r] == target:
+                return True
+        return False
+
+
 
   
 solution=Solution()

@@ -53,6 +53,17 @@ class LinkedList:
             new_node.next = current.next
             current.next = new_node
 
+    def remove(self, idx: int) -> None:
+        if idx == 0:
+            # 가장 앞의 노드를 삭제하면 head는 두번째 노드를 가리켜야한다.
+            # garbage collector가 알아서 처리해준다.
+            self.head = self.head.next
+        else:
+            current = self.head
+            for i in range(idx - 1):
+                current = current.next
+            current.next = current.next.next
+
 
 ll = LinkedList()
 ll.append(1)
@@ -60,4 +71,6 @@ ll.append(2)
 ll.append(3)
 ll.append(4)
 ll.insert(2, 5)
+print(ll.get(2))
+ll.remove(2)
 print(ll.get(2))

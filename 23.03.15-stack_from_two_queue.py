@@ -10,6 +10,7 @@ class Stack:
         self.q1.put(element)
 
     def pop(self):
+        # 마지막 값 앞의 값들을 q2에 넣는다.
         while self.q1.qsize() > 1:
             self.q2.put(self.q1.get())
 

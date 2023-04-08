@@ -71,10 +71,22 @@ print(isPalindrome2(STR2))
 
 def isPalindrome3(s: str) -> bool:
     s = s.lower()
-
     s = re.sub('[^a-z0-9]', "", s)
     return s == s[::-1] # 역순부터 조회
 
 print()
 print(isPalindrome3(STR1))
 print(isPalindrome3(STR2))
+
+
+
+# 정규표현식없이
+def is_palindrome(s):
+    # 문자열의 알파벳 문자만 추출하여 모두 소문자로 변경
+    s = ''.join(filter(str.isalpha, s)).lower()
+    # 문자열을 뒤집은 결과와 원본 문자열이 같은지 검사(역순조회)
+    return s == s[::-1]
+
+# 팰린드롬 검사 예시
+print(is_palindrome("A man, a plan, a canal, Panama"))  # True
+print(is_palindrome("Hello, world!"))  # False

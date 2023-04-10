@@ -10,19 +10,19 @@ List를 활용한 방법 빅오는 O(n^2)
 304 밀리초
 """
 
+
 def isPalindrome(s: str) -> bool:
 
     strs = []
     for char in s:
-        if char.isalnum(): # is alphabet or Num
+        if char.isalnum():  # is alphabet or Num
             strs.append(char.lower())
 
     while len(strs) > 1:
-        if strs.pop(0) != strs.pop(): # List의 Pop(0) 는 O(n)
+        if strs.pop(0) != strs.pop():  # List의 Pop(0) 는 O(n)
             return False
-    
-    return True
 
+    return True
 
 
 answer1 = isPalindrome(STR1)
@@ -47,45 +47,48 @@ from typing import Deque
 
 def isPalindrome2(s: str) -> bool:
     # 자료형 선언
-    strs : Deque = deque()
+    strs: Deque = deque()
 
     for char in s:
         if char.isalnum():
             strs.append(char.lower())
 
     while len(strs) > 1:
-        if strs.popleft() != strs.pop(): # poplift = O(1)
+        if strs.popleft() != strs.pop():  # poplift = O(1)
             return False
 
     return True
+
 
 print()
 print(isPalindrome2(STR1))
 print(isPalindrome2(STR2))
 
-    
+
 """
 술라이싱 사용
 36밀리초
 """
 
+
 def isPalindrome3(s: str) -> bool:
     s = s.lower()
-    s = re.sub('[^a-z0-9]', "", s)
-    return s == s[::-1] # 역순부터 조회
+    s = re.sub("[^a-z0-9]", "", s)
+    return s == s[::-1]  # 역순부터 조회
+
 
 print()
 print(isPalindrome3(STR1))
 print(isPalindrome3(STR2))
 
 
-
 # 정규표현식없이
 def is_palindrome(s):
     # 문자열의 알파벳 문자만 추출하여 모두 소문자로 변경
-    s = ''.join(filter(str.isalpha, s)).lower()
+    s = "".join(filter(str.isalpha, s)).lower()
     # 문자열을 뒤집은 결과와 원본 문자열이 같은지 검사(역순조회)
     return s == s[::-1]
+
 
 # 팰린드롬 검사 예시
 print(is_palindrome("A man, a plan, a canal, Panama"))  # True

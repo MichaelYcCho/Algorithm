@@ -12,12 +12,15 @@ class BinaryTree:
     def __init__(self, root: Node = None):
         self.root = root
 
-    def dfs(self, cur_node: Node):
+    def dfs_preorder(self, cur_node: Node):
         """
         # 트리 순회
         # 스택을 이용한 방식과 재귀를 이용한 방식 2가지로 나눠진다
         여기선 재귀를 사용한다.
-        # 모든 노드를 한번씩 방문해야하므로 완전탐색이라고도 불린다(깊이우선 탐색)
+        # 모든 노드를 한번씩 방문해야하므로 완전탐색이라고도 불린다(깊이 우선 탐색)
+        그 중에서도 전위순위(preorder)
+
+        전위순회의 특징은 자식노드에 방문하기전에 자기자신을 지나는것이 특징이다
         1진 트리 A(Root) B(Left) C(Right)가 있다고 가정하면
         A -> B -> A -> C -> A 순으로 탐색한다
 
@@ -28,9 +31,9 @@ class BinaryTree:
 
         if cur_node is None:
             return []
-
-        self.dfs(cur_node.left)
-        self.dfs(cur_node.right)
+        print(cur_node.value)
+        self.dfs_preorder(cur_node.left)
+        self.dfs_preorder(cur_node.right)
 
 
 bt = BinaryTree()
@@ -41,4 +44,4 @@ bt.root.left.left = Node(value=4)
 bt.root.left.right = Node(value=5)
 bt.root.right.right = Node(value=6)
 
-print(bt.dfs(bt.root))
+print(bt.dfs_preorder(bt.root))

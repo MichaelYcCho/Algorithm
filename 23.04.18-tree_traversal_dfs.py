@@ -50,6 +50,20 @@ class BinaryTree:
         print(cur_node.value)
         self.dfs_inorder(cur_node.right)
 
+    def def_postorder(self, cur_node: Node):
+        """
+        후위순회는 자식노드들을 모두 방문한 후에 root를 방문한다
+        1진 트리 A(Root) B(Left) C(Right)가 있다고 가정하면
+        B -> C -> A 순으로 탐색한다
+        """
+
+        if cur_node is None:
+            return []
+
+        self.def_postorder(cur_node.left)
+        self.def_postorder(cur_node.right)
+        print(cur_node.value)
+
 
 bt = BinaryTree()
 bt.root = Node(value=1)
@@ -64,3 +78,6 @@ print(bt.dfs_preorder(bt.root))
 print()
 print("중위순회")
 print(bt.dfs_inorder(bt.root))
+print()
+print("후위순회")
+print(bt.def_postorder(bt.root))

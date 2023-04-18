@@ -35,6 +35,21 @@ class BinaryTree:
         self.dfs_preorder(cur_node.left)
         self.dfs_preorder(cur_node.right)
 
+    def dfs_inorder(self, cur_node: Node):
+        """
+        중위순회는 Left chile를 방문한 후에 자기자신을 방문하고 마지막으로 Right child를 방문한다
+        1진 트리 A(Root) B(Left) C(Right)가 있다고 가정하면
+        B -> A -> C -> A 순으로 탐색한다
+        먼저 시작하는것이 right부터여도 상관없다. 중요한것은 어느 한쪽은 먼저 방문한 후 root를 방문한다는 것이다
+        """
+
+        if cur_node is None:
+            return []
+
+        self.dfs_inorder(cur_node.left)
+        print(cur_node.value)
+        self.dfs_inorder(cur_node.right)
+
 
 bt = BinaryTree()
 bt.root = Node(value=1)
@@ -44,4 +59,8 @@ bt.root.left.left = Node(value=4)
 bt.root.left.right = Node(value=5)
 bt.root.right.right = Node(value=6)
 
+print("전위순회")
 print(bt.dfs_preorder(bt.root))
+print()
+print("중위순회")
+print(bt.dfs_inorder(bt.root))

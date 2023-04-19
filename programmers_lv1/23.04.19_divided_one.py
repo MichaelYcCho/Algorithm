@@ -9,8 +9,16 @@
 """
 
 
-def solution(n):
+def solution_1(n):
     for x in range(2, n):
+        if n % x == 1:
+            return x
+    return 1
+
+
+# 번외 : 만약 가장 큰 수를 찾는 조건으로 바뀐다면?
+def solution_2(n):
+    for x in range(n - 1, 1, -1):
         if n % x == 1:
             return x
     return 1

@@ -30,10 +30,11 @@ class BinaryTree:
         """
 
         if cur_node is None:
-            return []
+            return
         print(cur_node.value)
         self.dfs_preorder(cur_node.left)
         self.dfs_preorder(cur_node.right)
+        # 1 -> 2 -> 4 -> 5 -> 3 -> 6 -> None
 
     def dfs_inorder(self, cur_node: Node):
         """
@@ -44,11 +45,12 @@ class BinaryTree:
         """
 
         if cur_node is None:
-            return []
+            return
 
         self.dfs_inorder(cur_node.left)
         print(cur_node.value)
         self.dfs_inorder(cur_node.right)
+        # 4 -> 2 -> 5 -> 1 -> 3 -> 6 -> None
 
     def def_postorder(self, cur_node: Node):
         """
@@ -58,11 +60,12 @@ class BinaryTree:
         """
 
         if cur_node is None:
-            return []
+            return
 
         self.def_postorder(cur_node.left)
         self.def_postorder(cur_node.right)
         print(cur_node.value)
+        # 4 -> 5 -> 2 -> 6 -> 3 -> 1 -> None
 
 
 bt = BinaryTree()

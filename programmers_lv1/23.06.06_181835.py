@@ -6,3 +6,12 @@ def solution(arr, k):
         else:  # k가 짝수인 경우
             result.append(num + k)
     return result
+
+
+
+# 다른 풀이
+def solution(arr, k):
+    if k % 2 != 0:
+        return list(map(lambda x: x * k, arr))
+
+    return list(map(lambda x: x + k, arr))
